@@ -6,11 +6,11 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:36:53 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/17 11:03:48 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/17 14:54:50 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "../includes/Animal.hpp"
 
 Animal::Animal( std::string type ) : m_type(type)
 {
@@ -24,7 +24,7 @@ Animal::~Animal( void )
 
 Animal::Animal( const Animal& orig)
 {
-	std::cout << "Copy constructor called for " << orig.m_type << std::endl;
+	std::cout << "Animal: copy constructor called for " << orig.m_type << std::endl;
 	*this = orig;
 }
 
@@ -32,7 +32,7 @@ Animal& Animal::operator = ( const Animal& orig)
 {
 	if (this != &orig)
 	{
-		std::cout << "Copy assignment operator called" << std::endl;
+		std::cout << "Animal: copy assignment operator called for " << orig.m_type << std::endl;
 		this->m_type = orig.m_type;
 	}
 	return (*this);

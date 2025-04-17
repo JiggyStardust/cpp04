@@ -6,13 +6,15 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:22:26 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/17 12:49:41 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/17 15:04:33 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Dog.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/WrongCat.hpp"
 
 int main()
 {
@@ -83,6 +85,28 @@ int main()
 	Cat minttu(mailis); // copy constructor
 	std::cout << "\nstd::cout << minttu.getType() << " " << std::endl;" << std::endl;
 	std::cout << minttu.getType() << " " << std::endl;
+
+
+	std::cout << "\n-------------------------------" << std::endl;
+	std::cout << "WrongAnimal and WrongCat\n" << std::endl;
+
+	std::cout << "WrongAnimal fraud = WrongCat();\n";
+	WrongAnimal fraud = WrongCat();
+	std::cout << "\nWrongCat unrealKitty;\n";
+	WrongCat	unrealKitty;
+
+	std::cout << "std::cout << fraud.getType << ': '" << std::endl;
+	std::cout << "fraud.makeSound();" << std::endl;
+	std::cout << fraud.getType() << ": ";
+	fraud.makeSound();
+
+	std::cout << "\nstd::cout << unrealKitty.getType << ': '" << std::endl;
+	std::cout << "unrealKitty.makeSound();" << std::endl;
+	std::cout << unrealKitty.getType() << ": ";
+	unrealKitty.makeSound();
+
+
+
 
 	std::cout << "\n-------------------------------" << std::endl;
 	std::cout << "DELETING ANIMALS\n\ndelete meta;\ndelete j;\ndelete i;\n" << std::endl;
