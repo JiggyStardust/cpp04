@@ -34,3 +34,4 @@ To make sure we can control and unerstand the concept of virtuality and overridi
 	• WrongAnimal (base class)
 	• WrongCat class
 If a WrongAnimal was created as WrongCat, calling makeSound for that animal wouldn't output WrongCats sounds, as WrongCat doesn't override WrongAnimal.
+
