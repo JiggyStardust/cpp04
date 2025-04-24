@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:38:38 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/17 14:55:53 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:02:58 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,4 @@ WrongCat&	WrongCat::operator = (const WrongCat& orig)
 void	WrongCat::makeSound( void ) const
 {
 	std::cout << "Purrrrrnauw" << std::endl;
-}
-
-std::string WrongCat::getType( void ) const
-{
-	return (m_type);
 }

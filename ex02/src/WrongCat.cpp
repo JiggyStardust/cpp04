@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:19:47 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 12:02:49 by sniemela         ###   ########.fr       */
+/*   Created: 2025/04/17 14:38:38 by sniemela          #+#    #+#             */
+/*   Updated: 2025/04/24 12:01:15 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Cat.hpp"
+#include "../includes/WrongCat.hpp"
 
-Cat::Cat( void )
+WrongCat::WrongCat( void )
 {
-	std::cout << "Cat: constructed" << std::endl;
-	m_type = "Cat";
+	std::cout << "WrongCat: constructed" << std::endl;
+	m_type = "WrongCat";
 }
 
-Cat::~Cat( void )
+WrongCat::~WrongCat( void )
 {
-	std::cout<< "Cat: destructed" << std::endl;
+	std::cout<< "WrongCat: destructed" << std::endl;
 }
 
-Cat::Cat(const Cat& orig) : Animal(orig)
+WrongCat::WrongCat(const WrongCat& orig) : WrongAnimal(orig)
 {
-	std::cout << "Cat: copy contructor called" << std::endl;
+	std::cout << "WrongCat: copy contructor called" << std::endl;
 	*this = orig;
 }
 
-Cat&	Cat::operator = (const Cat& orig)
+WrongCat&	WrongCat::operator = (const WrongCat& orig)
 {
 	if (this  != &orig)
 	{
-		std::cout << "Cat: copy assignment operator called" << std::endl;
+		std::cout << "WrongCat: copy assignment operator called" << std::endl;
 		this->m_type = orig.m_type;
 	}
 	return (*this);
 }
 
-void	Cat::makeSound( void ) const
+void	WrongCat::makeSound( void ) const
 {
 	std::cout << "Purrrrrnauw" << std::endl;
 }
-

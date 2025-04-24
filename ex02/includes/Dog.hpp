@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:18:40 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 12:02:40 by sniemela         ###   ########.fr       */
+/*   Created: 2025/04/17 09:27:00 by sniemela          #+#    #+#             */
+/*   Updated: 2025/04/24 12:00:55 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Cat : public Animal
+class Dog : public Animal
 {
+	private:
+		Brain* m_brain;
+
 	public:
-		Cat( void );
-		~Cat( void );
-		Cat(const Cat& orig);
-		Cat& operator = (const Cat& orig);
+		Dog( void );
+		~Dog( void );
+		Dog(const Dog& orig);
+		Dog& operator = (const Dog& orig);
 
 	void	makeSound( void ) const override;
 };

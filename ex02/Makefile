@@ -6,11 +6,11 @@
 #    By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 09:20:36 by sniemela          #+#    #+#              #
-#    Updated: 2025/04/24 11:53:46 by sniemela         ###   ########.fr        #
+#    Updated: 2025/04/24 11:54:00 by sniemela         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animorphism
+NAME = Abstract
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 CPP = c++
 SOURCES = src/main.cpp \

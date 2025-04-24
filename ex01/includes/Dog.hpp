@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:27:00 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/23 16:09:13 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:02:06 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ class Dog : public Animal
 		Dog& operator = (const Dog& orig);
 
 	void	makeSound( void ) const override;
-	std::string getType( void ) const;
 };

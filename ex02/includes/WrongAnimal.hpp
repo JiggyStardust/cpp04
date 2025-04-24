@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:18:40 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 12:02:40 by sniemela         ###   ########.fr       */
+/*   Created: 2025/04/17 14:34:06 by sniemela          #+#    #+#             */
+/*   Updated: 2025/04/24 10:13:45 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include <string>
+#include <iostream>
 
-class Cat : public Animal
+class WrongAnimal
 {
-	public:
-		Cat( void );
-		~Cat( void );
-		Cat(const Cat& orig);
-		Cat& operator = (const Cat& orig);
+	protected:
+		std::string m_type;
 
-	void	makeSound( void ) const override;
+	public:
+		WrongAnimal( std::string type = "Wrong Animal");
+		~WrongAnimal( void );
+		WrongAnimal( const WrongAnimal& orig);
+		WrongAnimal& operator = ( const WrongAnimal& orig);
+
+		std::string getType( void ) const;
+		void makeSound( void ) const;
 };

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 10:18:40 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 12:02:40 by sniemela         ###   ########.fr       */
+/*   Created: 2025/04/23 15:37:39 by sniemela          #+#    #+#             */
+/*   Updated: 2025/04/23 15:39:18 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "Animal.hpp"
+#include <string>
+#include <iostream>
 
-class Cat : public Animal
+class Brain
 {
+	protected:
+		std::string ideas[100];
 	public:
-		Cat( void );
-		~Cat( void );
-		Cat(const Cat& orig);
-		Cat& operator = (const Cat& orig);
-
-	void	makeSound( void ) const override;
+		Brain( void );
+		~Brain( void );
+		Brain (const Brain& orig);
+		Brain& operator = (const Brain& orig);
 };
