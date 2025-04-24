@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 10:18:40 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 12:00:51 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:09:58 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ class Cat : public Animal
 		Cat(const Cat& orig);
 		Cat& operator = (const Cat& orig);
 
-	void	makeSound( void ) const override;
+	void	makeSound( void ) const override; // pure override
 };

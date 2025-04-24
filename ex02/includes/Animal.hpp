@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:23:28 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 11:43:01 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:09:13 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ class Animal
 		std::string m_type;
 
 	public:
-		Animal( std::string type = "Animal");
+		Animal( std::string type = "abstract");
 		virtual ~Animal( void );
 		Animal( const Animal& orig);
 		Animal& operator = ( const Animal& orig);
 
 		std::string getType( void ) const;
-		virtual void makeSound( void ) const;
+		virtual void makeSound( void ) const = 0; // pure virtual
 };

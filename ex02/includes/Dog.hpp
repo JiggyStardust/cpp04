@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:27:00 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/24 12:00:55 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:10:01 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ class Dog : public Animal
 		Dog(const Dog& orig);
 		Dog& operator = (const Dog& orig);
 
-	void	makeSound( void ) const override;
+	void	makeSound( void ) const override; // pure override
 };
