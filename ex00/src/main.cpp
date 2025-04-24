@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:22:26 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/17 15:04:33 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:43:39 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main()
 	const Animal* i = new Cat();
 	std::cout << "\n";
 
+
 	std::cout << "\n-------------------------------" << std::endl;
 	std::cout << "OUTPUTTING ANIMAL SOUNDS\n" << std::endl;
 
@@ -51,24 +52,26 @@ int main()
 	meta->makeSound();
 	std::cout << "\n";
 
+
 	std::cout << "\n-------------------------------" << std::endl;
 	std::cout << "ANIMAL POINTERS\n" << std::endl;
-	std::cout << "1: Convert Animal pointer back to Cat pointer:\n";
+	std::cout << "1: Convert Animal pointer to Cat pointer:\n";
 	std::cout << "Animal *kitty = (Cat*) i;\n";
 	std::cout << "std::cout << kitty->getType() << std::endl;\n" << std::endl;
-	// Convert Animal pointer back to Cat pointer
+
+// Convert Animal pointer to Cat pointer
 	Animal *kitty = (Cat*) i;
 	std::cout << kitty->getType() << std::endl;
 
-	std::cout << "\n2: Convert Animal pointer back to Dog pointer:\n";
-	std::cout << "Animal *doggy = (Dog*) i;\n";
-	std::cout << "std::cout << doggy->getType() << std::endl;\n" << std::endl;
-// Convert Animal pointer back to Dog pointer
-	Animal *doggy = (Dog*) j;
-	std::cout << doggy->getType() << std::endl;
+	std::cout << "\n2: Convert Animal pointer to Dog pointer with copy assignment operator:\n";
+	std::cout << "kitty = (Dog*) i;\n";
+	std::cout << "std::cout << kitty->getType() << std::endl;\n" << std::endl;
+// Convert Animal pointer to Dog pointer with copy assignment operator
+	kitty = (Dog*) j;
+	std::cout << kitty->getType() << std::endl;
 
 	std::cout << "\n-------------------------------" << std::endl;
-	std::cout << "COPY CONS AND ASS OP\n" << std::endl;
+	std::cout << "MORE COPY CONS AND ASS OP\n" << std::endl;
 	
 	std::cout << "Dog john;" << std::endl;
 	Dog john;
@@ -81,24 +84,27 @@ int main()
 
 	std::cout << "\nCat mailis;" << std::endl;
 	Cat mailis;
-	std::cout << "\nCat minttu(mailis);; // copy constructor" << std::endl;
+	std::cout << "\nCat minttu(mailis); // copy constructor" << std::endl;
 	Cat minttu(mailis); // copy constructor
-	std::cout << "\nstd::cout << minttu.getType() << " " << std::endl;" << std::endl;
-	std::cout << minttu.getType() << " " << std::endl;
+	std::cout << "\nstd::cout << minttu.getType() << std::endl;" << std::endl;
+	std::cout << minttu.getType() << std::endl;
+
+	//If you try to assign Cats to Dogs and Vice Versa, it doesnt compile.
+	//Also can't copy construct a Cat out of an Animal.
 
 
 	std::cout << "\n-------------------------------" << std::endl;
-	std::cout << "WrongAnimal and WrongCat\n" << std::endl;
+	std::cout << "WRONGANIMAL AND WRONGCAT\n" << std::endl;
 
-	std::cout << "WrongAnimal fraud = WrongCat();\n";
-	WrongAnimal fraud = WrongCat();
+	std::cout << "const WrongAnimal *fraud = new WrongCat();\n";
+	const WrongAnimal *fraud = new WrongCat();
 	std::cout << "\nWrongCat unrealKitty;\n";
 	WrongCat	unrealKitty;
 
 	std::cout << "std::cout << fraud.getType << ': '" << std::endl;
 	std::cout << "fraud.makeSound();" << std::endl;
-	std::cout << fraud.getType() << ": ";
-	fraud.makeSound();
+	std::cout << fraud->getType() << ": ";
+	fraud->makeSound();
 
 	std::cout << "\nstd::cout << unrealKitty.getType << ': '" << std::endl;
 	std::cout << "unrealKitty.makeSound();" << std::endl;
@@ -106,15 +112,19 @@ int main()
 	unrealKitty.makeSound();
 
 
-
-
 	std::cout << "\n-------------------------------" << std::endl;
-	std::cout << "DELETING ANIMALS\n\ndelete meta;\ndelete j;\ndelete i;\n" << std::endl;
+	std::cout << "DELETING ANIMALS and WRONGANIMALS\n"
+				<< "\ndelete meta; // Animal"
+				<< "\ndelete j; // Dog"
+				<< "\ndelete i; // Cat"
+				<< "\ndelete fraud; // WrongCat"
+				<< "\n" << std::endl;
 	delete meta;
 	delete j;
 	delete i;
+	delete fraud;
 
-	std::cout << "\nmain ending soon, will the destructors be called..?" << std::endl;
+	std::cout << "\n\nmain ending soon, will the destructors be called in reverse..?\n" << std::endl;
 	
 	return 0;
 }

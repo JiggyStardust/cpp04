@@ -6,7 +6,7 @@
 /*   By: sniemela <sniemela@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 09:36:53 by sniemela          #+#    #+#             */
-/*   Updated: 2025/04/17 14:54:50 by sniemela         ###   ########.fr       */
+/*   Updated: 2025/04/24 10:21:31 by sniemela         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Animal& Animal::operator = ( const Animal& orig)
 
 void	Animal::makeSound( void ) const
 {
-	std::cout << " " << std::endl;
+	std::cout << "*inaudible*" << std::endl;
 }
 
 std::string Animal::getType( void ) const
